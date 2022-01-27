@@ -11,12 +11,11 @@ html {
 }
 
 body {
-    min-height: 100vh;
     background-color: var(--violet);
     background-image: url(../images/bg-mobile.svg);
     background-position: center top;
     background-repeat: none;
-    background-size: cover;
+    background-size: 100% 100%;
     font-family: "Open Sans", sans-serif;
 }
 
@@ -51,7 +50,12 @@ img {
     height: auto;
 }
 
-/* HEADER CONTENT */
+/* MAIN CONTENT */
+main {
+    min-height: 100vh;
+}
+
+/* MAIN HEADER SECTION */
 header {
     padding: 2em 2em 2.5em;
 }
@@ -61,8 +65,7 @@ header img {
     height: 35px;
 }
 
-/* MAIN CONTENT */
-/* HERO IMAGE SECTION */
+/* MAIN HERO IMAGE SECTION */
 figure {
     margin-bottom: 2em;
 }
@@ -71,8 +74,7 @@ figure {
 .text-section {
     text-align: center;
     color: white;
-    padding: 1em 2.25em;
-    margin-bottom: 1em;
+    padding: 1em 2em;
 }
 
 .text-section h1 {
@@ -80,25 +82,20 @@ figure {
     font-size: 1.6rem;
     font-weight: 600;
     line-height: 1.4;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
 }
 
 .text-section p {
-    color: rgb(207, 204, 204);
+    color: rgb(235, 228, 228);
     font-weight: 500;
-    line-height: 1.4;
-    letter-spacing: 0.01em;
-    margin-bottom: 0.5em;
+    line-height: 1.6;
+    margin-bottom: 2em;
 }
 
-/* MAIN BUTTON SECTION */
-.button-section {
-    text-align: center;
-}
-
-.button-section a {
+/* MAIN TEXT BUTTON SECTION */
+.button {
     background-color: white;
-    border-radius: 20px;
+    border-radius: 30px;
     color: var(--violet);
     font-size: 0.8rem;
     font-weight: 600;
@@ -106,15 +103,15 @@ figure {
     text-decoration: none;
 }
 
-.button-section a:active,
-.button-section a:hover {
+.button:active,
+.button:hover {
     background-color: var(--soft-magenta);
 }
 
-/* FOOTER CONTENT */
+/* MAIN FOOTER SECTION */
 footer {
     text-align: center;
-    padding: 5em 0 0;
+    padding-top: 4em;
 }
 
 footer li {
@@ -134,4 +131,87 @@ footer ion-icon:hover {
     background-color: var(--violet);
     color: var(--soft-magenta);
     border: 1px solid var(--soft-magenta);
+}
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 1440px) {
+    /* MAIN CONTENT */
+    main {
+        min-height: 100vh;
+        display: grid;
+        grid-template-areas:
+            "header header header header"
+            "hero hero text-section text-section"
+            "hero hero text-section text-section"
+            "footer footer footer footer";
+        margin: 0;
+        padding: 0 4em;
+    }
+
+    /* MAIN HEADER SECTION */
+    header {
+        grid-area: header;
+        align-self: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    header img {
+        width: 250px;
+        height: 150px;
+    }
+
+    /* MAIN HERO IMAGE SECTION */
+    figure {
+        grid-area: hero;
+        align-self: center;
+        margin: 0;
+        padding: 0;
+        width: 800px;
+        height: 550px;
+    }
+    figure img {
+        min-width: 100%;
+        height: 100%;
+    }
+
+    /* MAIN TEXT SECTION */
+    .text-section {
+        grid-area: text-section;
+        align-self: center;
+        width: 500px;
+        text-align: left;
+        margin: auto;
+        margin-top: 5em;
+        margin-left: 3em;
+        padding: 0;
+    }
+    .text-section h1 {
+        font-size: 2.5rem;
+        margin: 0;
+    }
+
+    .text-section p {
+        font-size: 1.1rem;
+        margin: 2em 0 3em;
+    }
+
+    /* MAIN TEXT BUTTON SECTION */
+    .button {
+        font-size: 1rem;
+        padding: 1.15em 5em;
+    }
+
+    /* MAIN FOOTER SECTION */
+    footer {
+        grid-area: footer;
+        grid-column: 2 / 5;
+        justify-self: end;
+        margin: 0;
+        padding: 0;
+    }
+
+    footer ion-icon {
+        padding: 0.65em;
+    }
 }
