@@ -13,9 +13,8 @@ html {
 body {
     background-color: var(--violet);
     background-image: url(../images/bg-mobile.svg);
-    background-position: center top;
-    background-repeat: none;
-    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 100vw;
     font-family: "Open Sans", sans-serif;
 }
 
@@ -67,6 +66,7 @@ header img {
 
 /* MAIN HERO IMAGE SECTION */
 figure {
+    text-align: center;
     margin-bottom: 2em;
 }
 
@@ -101,6 +101,7 @@ figure {
     font-weight: 600;
     padding: 0.75em 5em;
     text-decoration: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .button:active,
@@ -135,6 +136,11 @@ footer ion-icon:hover {
 
 /* MEDIA QUERIES */
 @media only screen and (min-width: 1440px) {
+    /* GENERAL/RESET */
+    body {
+        background-image: url(../images/bg-desktop.svg);
+    }
+
     /* MAIN CONTENT */
     main {
         min-height: 100vh;
